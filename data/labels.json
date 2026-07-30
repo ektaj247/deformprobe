@@ -1,0 +1,286 @@
+{
+    "cloth_01.jpg": {
+        "instruction": "fold the towel in half, top edge down to the bottom",
+        "cloth_state": "flat_aligned",
+        "corners": {
+            "top_left": [
+                1496,
+                646
+            ],
+            "top_right": [
+                3394,
+                713
+            ],
+            "bottom_left": [
+                1493,
+                2289
+            ],
+            "bottom_right": [
+                3414,
+                2300
+            ]
+        },
+        "grasp_points": [
+            "top_left",
+            "top_right"
+        ],
+        "gradeable": true,
+        "notes": "flat, aligned; grasp points ~just inside the corners"
+    },
+    "cloth_02.jpg": {
+        "instruction": "fold the towel in half, top edge down to the bottom",
+        "cloth_state": "flat_rotated",
+        "corners": {
+            "top_left": [
+                1107,
+                1040
+            ],
+            "top_right": [
+                2901,
+                325
+            ],
+            "bottom_left": [
+                1781,
+                2542
+            ],
+            "bottom_right": [
+                3591,
+                1767
+            ]
+        },
+        "grasp_points": [
+            "top_left",
+            "top_right"
+        ],
+        "gradeable": true,
+        "notes": "flat, rotated ~30 deg; corners named by the fabric's own frame"
+    },
+    "cloth_03.jpg": {
+        "instruction": "fold the towel in half, top edge down to the bottom",
+        "cloth_state": "flat_rotated",
+        "corners": {
+            "top_left": [
+                1158,
+                1573
+            ],
+            "top_right": [
+                2456,
+                126
+            ],
+            "bottom_left": [
+                2490,
+                2671
+            ],
+            "bottom_right": [
+                3707,
+                1154
+            ]
+        },
+        "grasp_points": [
+            "top_left",
+            "top_right"
+        ],
+        "gradeable": true,
+        "notes": "flat, rotated ~45 deg"
+    },
+    "cloth_04.jpg": {
+        "instruction": "fold the towel in half, top edge down to the bottom",
+        "cloth_state": "one_corner_folded",
+        "corners": {
+            "top_left": [
+                1713,
+                623
+            ],
+            "top_right": [
+                3634,
+                623
+            ],
+            "bottom_left": [
+                1713,
+                2208
+            ],
+            "bottom_right": [
+                2872,
+                1555
+            ]
+        },
+        "corner_state": {
+            "bottom_right": "folded_to_center"
+        },
+        "grasp_points": [
+            "top_left",
+            "top_right"
+        ],
+        "gradeable": true,
+        "notes": "bottom_right folded inward, underside visible; top edge untouched"
+    },
+    "cloth_05.jpg": {
+        "instruction": "fold the towel in half, top edge down to the bottom",
+        "cloth_state": "two_corners_folded",
+        "corners": {
+            "top_left": [
+                2454,
+                1184
+            ],
+            "top_right": [
+                3634,
+                623
+            ],
+            "bottom_left": [
+                1713,
+                2208
+            ],
+            "bottom_right": [
+                2929,
+                1522
+            ]
+        },
+        "corner_state": {
+            "top_left": "folded_to_center",
+            "bottom_right": "folded_to_center"
+        },
+        "grasp_points": [
+            "top_left",
+            "top_right"
+        ],
+        "gradeable": true,
+        "notes": "top_left and bottom_right folded inward showing underside; top edge still graspable (top_left from its flipped side, top_right in original orientation)"
+    },
+    "cloth_06.jpg": {
+        "instruction": "fold the towel in half top-down, bringing the top edge to the bottom",
+        "cloth_state": "folded_half",
+        "corners": {
+            "top_left": [
+                2131,
+                740
+            ],
+            "top_right": [
+                2970,
+                724
+            ],
+            "bottom_left": [
+                2252,
+                2536
+            ],
+            "bottom_right": [
+                3124,
+                2419
+            ]
+        },
+        "grasp_points": [
+            "top_left",
+            "top_right"
+        ],
+        "gradeable": true,
+        "notes": "already folded once left-to-right; second fold is top-down along the perpendicular axis; all four corners visible"
+    },
+    "cloth_07.jpg": {
+        "instruction": "pick up the towel by the visible corner to begin unfolding",
+        "cloth_state": "folded_quarters",
+        "corners": {
+            "top_right": [
+                3219,
+                1885
+            ],
+            "corner_cluster": [
+                3219,
+                1885
+            ]
+        },
+        "corner_state": {
+            "top_right": "underside_visible_at_overlap"
+        },
+        "occluded": [
+            "top_left",
+            "bottom_left",
+            "bottom_right"
+        ],
+        "grasp_points": [
+            "top_right"
+        ],
+        "gradeable": true,
+        "notes": "folded in quarters; corners overlap near bottom-right, but the top_right corner's underside is visible and graspable at the overlap point"
+    },
+    "cloth_08.jpg": {
+        "instruction": "pick up the towel by the two top corners to flatten it",
+        "cloth_state": "lightly_crumpled",
+        "corners": {
+            "top_left": [
+                1757,
+                599
+            ],
+            "top_right": [
+                3281,
+                594
+            ],
+            "bottom_left": [
+                1642,
+                2346
+            ],
+            "bottom_right": [
+                3400,
+                2304
+            ]
+        },
+        "grasp_points": [
+            "top_left",
+            "top_right"
+        ],
+        "gradeable": true,
+        "notes": "lightly crumpled but all four corners visible and graspable; flattening is feasible"
+    },
+    "cloth_09.jpg": {
+        "instruction": "pick up the towel by the visible corner to lift and flatten it",
+        "cloth_state": "heavily_crumpled",
+        "corners": {
+            "top_right": [
+                2939,
+                1692
+            ]
+        },
+        "corner_state": {
+            "top_right": "underside_visible"
+        },
+        "occluded": [
+            "top_left",
+            "bottom_left",
+            "bottom_right"
+        ],
+        "grasp_points": [
+            "top_right"
+        ],
+        "gradeable": true,
+        "notes": "heavily crumpled; only the top_right corner's underside is identifiable and graspable"
+    },
+    "cloth_10.jpg": {
+        "instruction": "grasp the two bottom corners and pull the towel back to lay it flat",
+        "cloth_state": "draped_off_frame",
+        "corners": {
+            "top_left": [
+                1417,
+                534
+            ],
+            "bottom_left": [
+                2515,
+                1737
+            ],
+            "bottom_right": [
+                3892,
+                436
+            ]
+        },
+        "corner_state": {
+            "top_right": "outside_frame"
+        },
+        "occluded": [
+            "top_right"
+        ],
+        "occluded_note": "top_right corner runs off the frame edge",
+        "grasp_points": [
+            "bottom_left",
+            "bottom_right"
+        ],
+        "gradeable": true,
+        "notes": "draped/partly out of frame; bottom edge graspable to pull cloth back to original position"
+    }
+}
