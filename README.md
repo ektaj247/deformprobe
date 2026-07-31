@@ -74,11 +74,10 @@ No GPU, free Gemini API tier:
 - **OpenVLA** (open 7B VLA, useful comparison point) — [arXiv](https://arxiv.org/abs/2406.09246)
 - π0 / π0-FAST explainer — [Hugging Face blog](https://huggingface.co/blog/pi0)
 
-### Advising context (Seita / SLURM Lab)
+### Related work on fabric manipulation
 
-- **Daniel Seita** — [homepage](https://danielseita.github.io/)
-- **SLURM Lab @ USC** — [site](https://slurm-lab-usc.github.io/) · [github org](https://github.com/slurm-lab-usc)
 - **GPT-Fabric** (foundation models for fabric manipulation) — [arXiv](https://arxiv.org/abs/2406.09640) · [folding repo](https://github.com/slurm-lab-usc/GPT-fabric-folding) · [smoothing repo](https://github.com/slurm-lab-usc/GPT-Fabric-Smoothing)
+- SLURM Lab @ USC (Seita et al.) — [lab site](https://slurm-lab-usc.github.io/)
 
 ### Simulation and perception tooling
 
