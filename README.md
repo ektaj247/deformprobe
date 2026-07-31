@@ -2,38 +2,59 @@
 
 **Does a vision-language-action model handle cloth the way it reasons about cloth?**
 
-DeformProbe is an evaluation framework for studying whether a generalist robot
-policy's stated reasoning about deformable objects matches the actions it
-actually generates. It focuses on cloth — the object class where generalist
-policies are most likely to break — and extends the multiple-choice reasoning
-evaluation of ManipBench (Seita et al., CoRL 2025) toward direct action
-generation.
+**How well do vision-language models reason about where to grasp cloth?**
+
+DeformProbe evaluates how well models choose grasp points on deformable objects.
+It focuses on cloth — the object class where such models are most likely to
+struggle — and builds on the multiple-choice reasoning evaluation of ManipBench
+(Seita et al., CoRL 2025), applied to a set of cloth images spanning a range of
+states from flat to crumpled.
 
 ## Motivation
 
-Vision-language-action (VLA) models inherit rich common-sense knowledge from
-internet-pretrained vision-language backbones. Whether that knowledge actually
-reaches the action head — particularly for deformable objects, with their
-complex, self-occluding configurations — is not well characterized. DeformProbe
-measures the gap between what a policy *says* about a cloth manipulation task and
-what it *does*.
+Vision-language models carry rich common-sense knowledge from internet
+pretraining, but how well that knowledge transfers to precise, low-level
+manipulation of deformable objects — with their complex, self-occluding
+configurations — is not well characterized. DeformProbe measures grasp-point
+reasoning across cloth states, as a step toward the longer-term question of
+whether a policy's stated reasoning matches the actions it would actually
+generate.
 
 ## Approach
 
-For each cloth scene, DeformProbe compares three signals:
-
-- a language-level answer to a ManipBench-style question about where to grasp,
-- the grasp implied by the action chunk the policy generates,
-- a human-labeled set of acceptable grasp points.
-
-The framework is developed against [SmolVLA](https://huggingface.co/lerobot/smolvla_base),
-a 450M-parameter VLA that runs on consumer hardware and shares π0.5's
-flow-matching, action-chunk architecture. π0.5 (Physical Intelligence) is the
-target for a larger-scale extension.
+Each cloth image is turned into a ManipBench-style multiple-choice question —
+candidate grasp points labeled on the image — and a vision-language model is
+asked which point to grasp for a given fold/flatten instruction. Answers are
+scored against human-labeled grasp corners, broken down by cloth state
+(flat → folded → crumpled → draped).
 
 ## Status
 
-Early development. Probe set and evaluation harness in progress.
+Reasoning pipeline working end to end (image → model → scored result), with
+per-cloth-state accuracy. Building a harder, more discriminative question set
+next.
+
+## Pilot results (preliminary)
+
+A first pass over 8 gradeable questions (2 excluded as too occluded to pose a
+choice) using a Gemini flash model scored highly across all cloth states — a
+coarse corner-vs-center format that does not yet discriminate, motivating harder
+questions. Directional only (N=8).
+
+## Repository
+
+- `data/images/` — top-down cloth photos across 10 states
+- `data/labels.json` — human-labeled corners, grasp points, and states
+- `make_questions.py` — builds annotated MCQ images + `questions.json`
+- `run_vlm.py` — runs a VLM over the questions and scores by cloth state
+- `smolvla_hello.py` — minimal script that runs a small VLA (SmolVLA) on an image
+
+## Reproduce
+
+No GPU, free Gemini API tier:
+`python make_questions.py` then `python run_vlm.py --model <gemini-flash-model>`.
+
+<[Colab Notebook](https://colab.research.google.com/drive/1nSAhHmEdgWCeoEIvRq1gLj4WxJ16PzmO?usp=sharing)>
 
 ## References and resources
 
@@ -52,6 +73,12 @@ Early development. Probe set and evaluation harness in progress.
 - **PaliGemma** (π0's VLM backbone) — [arXiv](https://arxiv.org/abs/2407.07726)
 - **OpenVLA** (open 7B VLA, useful comparison point) — [arXiv](https://arxiv.org/abs/2406.09246)
 - π0 / π0-FAST explainer — [Hugging Face blog](https://huggingface.co/blog/pi0)
+
+### Advising context (Seita / SLURM Lab)
+
+- **Daniel Seita** — [homepage](https://danielseita.github.io/)
+- **SLURM Lab @ USC** — [site](https://slurm-lab-usc.github.io/) · [github org](https://github.com/slurm-lab-usc)
+- **GPT-Fabric** (foundation models for fabric manipulation) — [arXiv](https://arxiv.org/abs/2406.09640) · [folding repo](https://github.com/slurm-lab-usc/GPT-fabric-folding) · [smoothing repo](https://github.com/slurm-lab-usc/GPT-Fabric-Smoothing)
 
 ### Simulation and perception tooling
 
