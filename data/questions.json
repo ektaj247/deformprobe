@@ -1,0 +1,258 @@
+{
+  "questions": {
+    "cloth_01.jpg": {
+      "instruction": "fold the towel in half, top edge down to the bottom",
+      "cloth_state": "flat_aligned",
+      "candidates": {
+        "A": [
+          1496,
+          646
+        ],
+        "B": [
+          3394,
+          713
+        ],
+        "C": [
+          1493,
+          2289
+        ],
+        "D": [
+          3414,
+          2300
+        ],
+        "E": [
+          2449,
+          1487
+        ]
+      },
+      "correct": [
+        "A",
+        "B"
+      ],
+      "annotated_image": "data/annotated\\cloth_01_annotated.jpg"
+    },
+    "cloth_02.jpg": {
+      "instruction": "fold the towel in half, top edge down to the bottom",
+      "cloth_state": "flat_rotated",
+      "candidates": {
+        "A": [
+          1107,
+          1040
+        ],
+        "B": [
+          2901,
+          325
+        ],
+        "C": [
+          1781,
+          2542
+        ],
+        "D": [
+          3591,
+          1767
+        ],
+        "E": [
+          2345,
+          1418
+        ]
+      },
+      "correct": [
+        "A",
+        "B"
+      ],
+      "annotated_image": "data/annotated\\cloth_02_annotated.jpg"
+    },
+    "cloth_03.jpg": {
+      "instruction": "fold the towel in half, top edge down to the bottom",
+      "cloth_state": "flat_rotated",
+      "candidates": {
+        "A": [
+          1158,
+          1573
+        ],
+        "B": [
+          2456,
+          126
+        ],
+        "C": [
+          2490,
+          2671
+        ],
+        "D": [
+          3707,
+          1154
+        ],
+        "E": [
+          2453,
+          1381
+        ]
+      },
+      "correct": [
+        "A",
+        "B"
+      ],
+      "annotated_image": "data/annotated\\cloth_03_annotated.jpg"
+    },
+    "cloth_04.jpg": {
+      "instruction": "fold the towel in half, top edge down to the bottom",
+      "cloth_state": "one_corner_folded",
+      "candidates": {
+        "A": [
+          1713,
+          623
+        ],
+        "B": [
+          3634,
+          623
+        ],
+        "C": [
+          1713,
+          2208
+        ],
+        "D": [
+          2872,
+          1555
+        ],
+        "E": [
+          2483,
+          1252
+        ]
+      },
+      "correct": [
+        "A",
+        "B"
+      ],
+      "annotated_image": "data/annotated\\cloth_04_annotated.jpg"
+    },
+    "cloth_05.jpg": {
+      "instruction": "fold the towel in half, top edge down to the bottom",
+      "cloth_state": "two_corners_folded",
+      "candidates": {
+        "A": [
+          2454,
+          1184
+        ],
+        "B": [
+          3634,
+          623
+        ],
+        "C": [
+          1713,
+          2208
+        ],
+        "D": [
+          2929,
+          1522
+        ],
+        "E": [
+          2682,
+          1384
+        ]
+      },
+      "correct": [
+        "A",
+        "B"
+      ],
+      "annotated_image": "data/annotated\\cloth_05_annotated.jpg"
+    },
+    "cloth_06.jpg": {
+      "instruction": "fold the towel in half top-down, bringing the top edge to the bottom",
+      "cloth_state": "folded_half",
+      "candidates": {
+        "A": [
+          2131,
+          740
+        ],
+        "B": [
+          2970,
+          724
+        ],
+        "C": [
+          2252,
+          2536
+        ],
+        "D": [
+          3124,
+          2419
+        ],
+        "E": [
+          2619,
+          1605
+        ]
+      },
+      "correct": [
+        "A",
+        "B"
+      ],
+      "annotated_image": "data/annotated\\cloth_06_annotated.jpg"
+    },
+    "cloth_08.jpg": {
+      "instruction": "pick up the towel by the two top corners to flatten it",
+      "cloth_state": "lightly_crumpled",
+      "candidates": {
+        "A": [
+          1757,
+          599
+        ],
+        "B": [
+          3281,
+          594
+        ],
+        "C": [
+          1642,
+          2346
+        ],
+        "D": [
+          3400,
+          2304
+        ],
+        "E": [
+          2520,
+          1461
+        ]
+      },
+      "correct": [
+        "A",
+        "B"
+      ],
+      "annotated_image": "data/annotated\\cloth_08_annotated.jpg"
+    },
+    "cloth_10.jpg": {
+      "instruction": "grasp the two bottom corners and pull the towel back to lay it flat",
+      "cloth_state": "draped_off_frame",
+      "candidates": {
+        "A": [
+          1417,
+          534
+        ],
+        "B": [
+          2515,
+          1737
+        ],
+        "C": [
+          3892,
+          436
+        ],
+        "D": [
+          2608,
+          902
+        ]
+      },
+      "correct": [
+        "B",
+        "C"
+      ],
+      "annotated_image": "data/annotated\\cloth_10_annotated.jpg"
+    }
+  },
+  "excluded": {
+    "cloth_07.jpg": {
+      "cloth_state": "folded_quarters",
+      "reason": "only 1 identifiable candidate(s); too occluded (folded_quarters) to pose a multiple-choice question"
+    },
+    "cloth_09.jpg": {
+      "cloth_state": "heavily_crumpled",
+      "reason": "only 1 identifiable candidate(s); too occluded (heavily_crumpled) to pose a multiple-choice question"
+    }
+  }
+}
